@@ -1,7 +1,10 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, Patch, Post } from "@nestjs/common";
 import { UserService } from "./user.service";
 import { webResponse } from "src/model/web.model";
-import { RegisterUserRequest, UserResponse } from "../model/user.model";
+import { LoginUserRequest, RegisterUserRequest, UpdateUserRequest, UserResponse } from "../model/user.model";
+import { Auth } from "../common/auth.decorator";
+import { User } from "@prisma/client";
+import { request } from "http";
 
 @Controller('/api/users')
 export class UserController {
@@ -10,13 +13,60 @@ export class UserController {
     ) { }
 
     @Post()
+    @HttpCode(200)
     async register(
-        @Body() request : RegisterUserRequest,
+        @Body() request: RegisterUserRequest,
     ): Promise<webResponse<UserResponse>> {
         const result = await this.userService.register(request)
 
         return {
-            data: request
+            data: result
+        }
+    }
+
+    @Post('/login')
+    @HttpCode(200)
+    async login(
+        @Body() request: LoginUserRequest,
+    ): Promise<webResponse<UserResponse>> {
+        const result = await this.userService.login(request)
+
+        return {
+            data: result
+        }
+    }
+
+    @Get('/current')
+    @HttpCode(200)
+    async get(
+        @Auth() user: User
+    ): Promise<webResponse<UserResponse>> {
+        const result = await this.userService.getUser(user)
+        return {
+            data: result
+        }
+    }
+
+    @Patch('/current')
+    @HttpCode(200)
+    async update(
+        @Auth() user: User,
+        @Body() request: UpdateUserRequest
+    ): Promise<webResponse<UserResponse>> {
+        const result = await this.userService.update(user, request)
+        return {
+            data: result
+        }
+    }
+
+    @Delete('/current')
+    @HttpCode(200)
+    async logout(
+        @Auth() user: User,
+    ): Promise<webResponse<boolean>> {
+        const result = await this.userService.logOut(user)
+        return {
+            data: true
         }
     }
 }
