@@ -8,13 +8,10 @@ export class TestService {
   constructor(private prismaService: PrismaService) {}
 
   async deleteAll() {
-    await this.prismaService.address.deleteMany();
-    await this.prismaService.contact.deleteMany();
-    await this.prismaService.user.deleteMany();
+    await this.deleteAddress();
+    await this.deleteContact();
+    await this.deleteUser();
   }
-  // await testService.deleteAddress();
-  // await testService.deleteContact();
-  // await testService.deleteUser();
 
   async deleteAddress() {
     await this.prismaService.address.deleteMany({
