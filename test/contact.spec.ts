@@ -28,8 +28,8 @@ describe('ContactController', () => {
   describe('POST /api/contacts', () => {
     beforeEach(async () => {
       testService = app.get(TestService);
-      await testService.deleteContact();
-      await testService.deleteUser();
+      await testService.deleteAll();
+      // await testService.deleteUser();
 
       await testService.createUser();
     });
@@ -77,8 +77,8 @@ describe('ContactController', () => {
   describe('GET /api/contacts/:contactId', () => {
     beforeEach(async () => {
       testService = app.get(TestService);
-      await testService.deleteContact();
-      await testService.deleteUser();
+      await testService.deleteAll();
+      // await testService.deleteUser();
 
       await testService.createUser();
       await testService.createContact();
@@ -118,8 +118,8 @@ describe('ContactController', () => {
     beforeEach(async () => {
       testService = app.get(TestService);
 
-      await testService.deleteContact();
-      await testService.deleteUser();
+      await testService.deleteAll();
+      // await testService.deleteUser();
 
       await testService.createUser();
       await testService.createContact();
@@ -189,8 +189,8 @@ describe('ContactController', () => {
   describe('DELETE /api/contacts/:contactId', () => {
     beforeEach(async () => {
       testService = app.get(TestService);
-      await testService.deleteContact();
-      await testService.deleteUser();
+      await testService.deleteAll();
+      // await testService.deleteUser();
 
       await testService.createUser();
       await testService.createContact();
@@ -225,8 +225,8 @@ describe('ContactController', () => {
   describe('GET /api/contacts', () => {
     beforeEach(async () => {
       testService = app.get(TestService);
-      await testService.deleteContact();
-      await testService.deleteUser();
+      await testService.deleteAll();
+      // await testService.deleteUser();
 
       await testService.createUser();
       await testService.createContact();
