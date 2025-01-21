@@ -16,7 +16,7 @@ Request Body :
     "city" : "kota apa", //optional
     "province" : "provinsi apa", //optional
     "country" : "negara apa",
-    "postalCode" : 12345,
+    "postalCode" : "12345",
 }
 ```
 
@@ -24,13 +24,13 @@ Response Body :
 
 ```json
 {
-        data : {
+    data : {
         "id" : 1, 
         "street" : "jalan apa", //optional
         "city" : "kota apa", //optional
         "province" : "provinsi apa", //optional
         "country" : "negara apa",
-        "postalCode" : 12345,
+        "postalCode" : "12345",
     }
 }
 ```
@@ -47,13 +47,13 @@ Response Body :
 
 ```json
 {
-        data : {
+    data : {
         "id" : 1, 
         "street" : "jalan apa", //optional
         "city" : "kota apa", //optional
         "province" : "provinsi apa", //optional
         "country" : "negara apa",
-        "postalCode" : 12345,
+        "postalCode" : "12345",
     }
 }
 ```
@@ -74,7 +74,7 @@ Request Body :
     "city" : "kota apa", //optional
     "province" : "provinsi apa", //optional
     "country" : "negara apa",
-    "postalCode" : 12345,
+    "postalCode" : "12345",
 }
 ```
 
@@ -82,13 +82,13 @@ Response Body :
 
 ```json
 {
-        data : {
+    data : {
         "id" : 1, 
         "street" : "jalan apa", //optional
         "city" : "kota apa", //optional
         "province" : "provinsi apa", //optional
         "country" : "negara apa",
-        "postalCode" : 12345,
+        "postalCode" : "12345",
     }
 }
 ```
@@ -105,7 +105,7 @@ Response Body :
 
 ```json
 {
-        data : true
+    data : true
 }
 ```
 
@@ -128,7 +128,7 @@ Response Body :
             "city" : "kota apa", //optional
             "province" : "provinsi apa", //optional
             "country" : "negara apa",
-            "postalCode" : 12345,
+            "postalCode" : "12345",
         },
         {
             "id" : 2, 
@@ -136,7 +136,7 @@ Response Body :
             "city" : "kota apa", //optional
             "province" : "provinsi apa", //optional
             "country" : "negara apa",
-            "postalCode" : 12345,
+            "postalCode" : "12345",
         },
         ...
     ]
